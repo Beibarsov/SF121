@@ -1,8 +1,18 @@
-﻿User user = new User() { Login = "user", Name = "User Userovich", IsPremium = false};
+﻿List<User> users = new List<User>();
 
-if (!user.IsPremium)
+
+users.Add(new User() { Login = "user", Name = "User Userovich", IsPremium = false});
+users.Add(new User() { Login = "user2", Name = "User Polzovich", IsPremium = true});
+
+
+foreach (var user in users)
 {
-	ShowAds();
+	Console.WriteLine($"Привет, {user.Name}!");
+	if (!user.IsPremium)
+	{
+		ShowAds();
+	}
+
 }
 
 static void ShowAds()
